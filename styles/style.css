@@ -25,13 +25,17 @@ a {
 }
 
 nav,
-header {
+header,
+main {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 6rem;
   margin-bottom: 30px;
-  gap: 30px;
+}
+
+header {
+  gap: 40px;
 }
 
 nav h1 {
@@ -48,7 +52,7 @@ nav a:hover {
   color: var(--primary-color);
 }
 .left-head h1 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   color: var(--dark-color);
   margin-bottom: 10px;
 }
@@ -86,13 +90,37 @@ button:hover {
   width: 450px;
   background-size: 440px;
 }
+main {
+  flex-direction: column;
+}
+main hr {
+  height: 1px;
+}
+section {
+  display: flex;
+}
+.sponsor {
+  justify-content: center;
+  gap: 60px;
+  padding: 20px 0;
+  border-width: 2px 0px;
+  border-style: solid;
+  border-image: linear-gradient(
+      to right,
+      transparent,
+      rgba(0, 0, 0, 0.1),
+      transparent
+    )
+    50% 1;
+  flex-wrap: wrap;
+}
 
-@media screen and (min-width: 576px) and (max-width: 900px) {
+@media screen and (min-width: 600px) and (max-width: 900px) {
   nav,
-  header {
+  header,
+  main {
     padding: 1rem;
     flex-direction: column;
-    margin-bottom: 10px;
   }
   header {
     flex-direction: column-reverse;
@@ -102,7 +130,7 @@ button:hover {
   }
 
   .left-head h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-align: center;
   }
   .left-head p {
@@ -122,11 +150,15 @@ button:hover {
     height: 370px;
     width: 370px;
   }
+  .sponsor {
+    gap: 30px;
+  }
 }
 
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 600px) {
   nav,
-  header {
+  header,
+  main {
     padding: 1rem;
     flex-direction: column;
     margin-bottom: 10px;
@@ -161,5 +193,8 @@ button:hover {
   .right-head img {
     height: 300px;
     width: 300px;
+  }
+  .sponsor {
+    gap: 20px;
   }
 }
