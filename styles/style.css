@@ -6,6 +6,7 @@
   box-sizing: border-box;
   border: 0;
   font-family: "Poppins", serif;
+  color: var(--dark-color);
 }
 
 :root {
@@ -30,17 +31,19 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 6rem;
-  margin-bottom: 30px;
+  padding: 1rem 8rem;
+  margin-bottom: 20px;
 }
-
+nav {
+  margin-top: 20px;
+  gap: 20px;
+}
 header {
   gap: 40px;
 }
 
 nav h1 {
   font-size: 1.5rem;
-  color: var(--dark-color);
 }
 
 nav li {
@@ -61,6 +64,9 @@ nav a:hover {
   color: var(--secondary-text-color);
   margin-bottom: 10px;
   text-align: justify;
+}
+.left-head i {
+  color: #ffffff;
 }
 button {
   background-color: var(--primary-color);
@@ -100,9 +106,13 @@ section {
   display: flex;
 }
 .sponsor {
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  align-content: center;
   gap: 60px;
   padding: 20px 0;
+  /* gradient border */
   border-width: 2px 0px;
   border-style: solid;
   border-image: linear-gradient(
@@ -112,9 +122,64 @@ section {
       transparent
     )
     50% 1;
-  flex-wrap: wrap;
+}
+.sponsor img {
+  height: 30px;
+  filter: grayscale(1);
+}
+.sponsor img:hover {
+  filter: grayscale(0);
+}
+.popular {
+  flex-direction: column;
+  margin-top: 60px;
+  padding: 0 5rem;
+}
+.popular h2 {
+  text-align: center;
+}
+.popular h4 {
+  margin-top: 30px;
+  text-align: right;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+.popular i {
+  color: var(--primary-color);
+  padding-left: 10px;
+}
+.popular h4:hover {
+  color: #d54202;
+}
+.popular-grid {
+  margin-top: 30px;
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
 }
 
+.card {
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: -1px 1px 3px 3px rgba(0, 0, 0, 0.1);
+}
+.card img {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  border-radius: 6px;
+}
+.card .title {
+  font-size: 2rem;
+  font-weight: 400;
+}
+.card .price {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+.card .description {
+  text-align: justify;
+}
 @media screen and (min-width: 600px) and (max-width: 900px) {
   nav,
   header,
@@ -152,6 +217,14 @@ section {
   }
   .sponsor {
     gap: 30px;
+  }
+
+  .popular {
+    padding: inherit;
+  }
+
+  .popular-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -196,5 +269,11 @@ section {
   }
   .sponsor {
     gap: 20px;
+  }
+  .popular {
+    padding: inherit;
+  }
+  .popular-grid {
+    grid-template-columns: 1fr;
   }
 }
