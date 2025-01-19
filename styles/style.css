@@ -97,12 +97,24 @@ button i {
   width: 450px;
   background-size: 440px;
 }
+@keyframes rotate_camera {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-30deg) scale(90%);
+  }
+  100% {
+    transform: rotate(40deg) scale(110%);
+  }
+}
 .right-head img {
   height: 450px;
-  transition: all 0.5s ease-in-out 0s;
+  transition: all 3s ease-in-out 0s;
 }
 .right-head img:hover {
-  transform: rotate(20deg) scale(110%);
+  /* transform: rotate(20deg) scale(110%); */
+  animation: rotate_camera 5s infinite;
 }
 main {
   flex-direction: column;
@@ -176,6 +188,11 @@ section {
   aspect-ratio: 1 / 1;
   width: 100%;
   border-radius: 6px;
+  margin-bottom: 8px;
+  transition: all 0.5s ease-in-out 0s;
+}
+.card img:hover {
+  transform: scale(112%);
 }
 .card .title {
   font-size: 2rem;
@@ -243,6 +260,7 @@ footer i {
   color: var(--light-color);
   display: block;
 }
+/* Style For TABLET */
 @media screen and (min-width: 600px) and (max-width: 900px) {
   nav,
   header,
@@ -291,7 +309,7 @@ footer i {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
+/* Style For Mobile */
 @media screen and (max-width: 600px) {
   nav,
   header,
