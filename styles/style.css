@@ -65,9 +65,7 @@ nav a:hover {
   margin-bottom: 10px;
   text-align: justify;
 }
-.left-head i {
-  color: #ffffff;
-}
+
 button {
   background-color: var(--primary-color);
   color: var(--light-color);
@@ -84,6 +82,9 @@ button {
 button:hover {
   background-color: #d54202;
   gap: 25px;
+}
+button i {
+  color: #ffffff;
 }
 .right-head {
   display: flex;
@@ -180,6 +181,38 @@ section {
 .card .description {
   text-align: justify;
 }
+.featured {
+  margin-top: 50px;
+  align-items: center;
+  gap: 40px;
+}
+.featured h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.featured p {
+  text-align: justify;
+}
+.featured button {
+  border-radius: 4px;
+}
+
+footer {
+  background-color: #0a0826;
+  text-align: center;
+  padding: 30px 0;
+}
+footer h2 {
+  color: var(--light-color);
+  margin-bottom: 12px;
+}
+footer p {
+  color: var(--light-color);
+  margin-bottom: 10px;
+}
+footer i {
+  color: var(--light-color);
+}
 @media screen and (min-width: 600px) and (max-width: 900px) {
   nav,
   header,
@@ -256,7 +289,7 @@ section {
   button {
     padding: 10px 40px;
     font-size: 1rem;
-    margin: 10px auto;
+    margin: 20px auto;
   }
   .right-head {
     height: 310px;
@@ -275,5 +308,24 @@ section {
   }
   .popular-grid {
     grid-template-columns: 1fr;
+  }
+  .card .title {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+  .card .price {
+    font-size: 1.2rem;
+  }
+  .featured {
+    flex-direction: column-reverse;
+    padding: 0;
+    justify-content: center;
+  }
+  .featured h1 {
+    text-align: center;
+    font-size: 1.6rem;
+  }
+  .featured img {
+    width: 300px;
   }
 }
