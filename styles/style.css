@@ -110,7 +110,7 @@ button i {
 }
 .right-head img {
   height: 450px;
-  transition: all 3s ease-in-out 0s;
+  transition: all 2s ease-in-out 0s;
 }
 .right-head img:hover {
   /* transform: rotate(20deg) scale(110%); */
@@ -178,11 +178,25 @@ section {
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
 }
+/* Scrolling Animation on Card */
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
 .card {
   padding: 20px;
   border-radius: 6px;
   box-shadow: -1px 1px 3px 3px rgba(0, 0, 0, 0.1);
+  animation: appear linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }
 .card img {
   aspect-ratio: 1 / 1;
@@ -210,6 +224,30 @@ section {
   align-items: center;
   gap: 40px;
 }
+.left_content {
+  position: relative;
+}
+.left_content:hover .visit_ball {
+  display: block;
+}
+.visit_ball {
+  background-color: #ae3c07c2;
+  color: #ffffff;
+  display: none;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+}
+.featured img:hover {
+  transform: scale(105%);
+  transition: transform 0.2s ease 0s;
+}
+
 .featured h1 {
   font-size: 2rem;
   margin-bottom: 20px;
@@ -251,10 +289,12 @@ footer a {
   background-color: #0a082620;
   border-radius: 50%;
   border: 1px solid #ffffff;
+  transition: transform 0.2s ease-in 0s;
 }
 
 footer a:hover {
   background-color: var(--primary-color);
+  transform: scale(115%);
 }
 footer i {
   color: var(--light-color);
